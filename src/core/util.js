@@ -19,6 +19,8 @@ const inspect = require('./inspect');
  */
 exports.checkType = function checkType(instance, type) {
     if (!(instance instanceof type)) {
+        if (type.name === 'Array' && Array.isArray(instance)) return;
+
         if (isNil(instance)) {
             console.warn(
                 `Was expecting instance of ${type.name} but got ${instance}!`
