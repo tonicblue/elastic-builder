@@ -13,6 +13,7 @@ const {
     Rescore,
     InnerHits,
     SearchTemplate,
+    Query,
     util: { constructorWrapper }
 } = require('./core');
 
@@ -116,6 +117,7 @@ const {
         FiltersAggregation,
         GeoDistanceAggregation,
         GeoHashGridAggregation,
+        GeoHexGridAggregation,
         GeoTileGridAggregation,
         GlobalAggregation,
         HistogramAggregation,
@@ -166,6 +168,9 @@ exports.requestBodySearch = constructorWrapper(RequestBodySearch);
 /* ============ ============ ============ */
 /* ============== Queries =============== */
 /* ============ ============ ============ */
+exports.Query = Query;
+exports.query = constructorWrapper(Query);
+
 exports.MatchAllQuery = MatchAllQuery;
 exports.matchAllQuery = constructorWrapper(MatchAllQuery);
 
@@ -419,6 +424,9 @@ exports.geoDistanceAggregation = constructorWrapper(GeoDistanceAggregation);
 
 exports.GeoHashGridAggregation = GeoHashGridAggregation;
 exports.geoHashGridAggregation = constructorWrapper(GeoHashGridAggregation);
+
+exports.GeoHexGridAggregation = GeoHexGridAggregation;
+exports.geoHexGridAggregation = constructorWrapper(GeoHexGridAggregation);
 
 exports.GeoTileGridAggregation = GeoTileGridAggregation;
 exports.geoTileGridAggregation = constructorWrapper(GeoTileGridAggregation);
